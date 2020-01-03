@@ -32,6 +32,9 @@ public class GameManager : MonoBehaviour {
         {
             PushUp();
         }
+        if(Input.GetKeyDown("down")) {
+            PushDown();
+        }
     }
 
     void GetZombieLeft()
@@ -74,6 +77,11 @@ public class GameManager : MonoBehaviour {
     {
         Rigidbody rb = selectedZombie.GetComponent<Rigidbody>();
         rb.AddForce(0,0,10,ForceMode.Impulse);
+    }
+
+    void PushDown() {
+        Rigidbody rb = selectedZombie.GetComponent<Rigidbody>();
+        rb.AddForce(0, 0, -5, ForceMode.Impulse);
     }
 
     public void AddPoint ()
